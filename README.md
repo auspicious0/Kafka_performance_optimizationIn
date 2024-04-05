@@ -38,12 +38,15 @@ auto.create.topics.enable: 토픽 자동 작성(default가 트루임) 토픽이 
 min.insync.replicas: 최소 리플리케이션 펙터 -> 브로커가 3대 있고 min.insync.replicas가 3이라면 1개만 고장나도 메세지 보낼 수 없는 상태, 2로 설정되어 있다면 메시지 보낼 수 있음 감당 가능 낮을수록 유리. but 메시지 유실 가능성 증가
 
 unclean.leader.election.enable: 데이터 유실이 발생하더라도 kafka 서버가 중지되는 상황을 막는 설정 -> isp(in-sync replica)가 아닌 osr(out of sync replica)를 가지고 있는 broker를 leader로 선출할 수 있도록 선출하는 옵션.
+```
+
   ![image](https://github.com/auspicious0/Kafka_performance_optimizationIn/assets/108572025/79fe1f1e-6618-4ca9-90e6-5dbd6ec9225e)
 
-
+```
 broker.rack: 한쪽으로 task가 쏠리지 않게 하는 시스템 -> 분산처리의 핵심이다. 어떻게 사용하는지 잘 모르겠으나 현재까지 살펴본 바로는 같은 서버에 있는 broker마다 고유의 아이디를 생성하는 것 같다.
+```
   ![image](https://github.com/auspicious0/Kafka_performance_optimizationIn/assets/108572025/b324d26f-e112-4e47-9468-f10b0dd32c4e)
-
+```
 log.flush.interval.messages : 디스크로 보내기 전 메모리에 보유할 메시지의 개수 -> 적을수록 유리할까? 잘
 
 log.flush.interval.ms: 메시지가 플러시 되기 전에 로그에서 누적할 수 있는 최대 시간
